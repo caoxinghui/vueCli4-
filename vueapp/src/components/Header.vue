@@ -1,6 +1,6 @@
 <template>
-    <div class='header'>
-        <h1 @click='changeTitle'>{{title}} {{headerTitle}}</h1>
+    <div class='header' @click='changeTitle'>
+        <h1>{{title}} {{headerTitle}}</h1>
     </div>
 </template>
 <script>
@@ -18,7 +18,9 @@
         },
         methods:{
             changeTitle(){
-                this.headerTitle = '子组件改变父组件的值'
+                // this.headerTitle = '子组件改变父组件的值2222',
+                // 注册事件 参数1：事件名称 参数2：传的值
+                this.$emit('titleChange','xinghui子组件改变父组件的值');
             }
         }
     };

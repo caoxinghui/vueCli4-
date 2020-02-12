@@ -3,7 +3,7 @@
     <!-- <h1>app.vue</h1> -->
     <!-- 调用组件 -->
     <!-- <Header></Header> -->
-    <Header :headerTitle='title'/>
+    <Header :headerTitle='title' @titleChange='updataTitle'/>
     <Users :sbquser='people'/>
     <hr>
     <Users :sbquser='people' />
@@ -34,6 +34,11 @@
                     {name:'xinghui4',weChat:'18822514340',show:false},
                     {name:'xinghui5',weChat:'18822514340',show:false}
                 ]
+      }
+    },
+    methods:{
+      updataTitle(data){
+        this.title = data;
       }
     }
   }
