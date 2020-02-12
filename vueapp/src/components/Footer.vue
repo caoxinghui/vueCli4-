@@ -1,26 +1,25 @@
 <template>
-<!-- html -->
-  <div class="footer">
-      <h1>{{title}}</h1>
-  </div>
+    <div class='footer'>
+        <p>{{copyright}}</p>
+    </div>
 </template>
-
 <script>
-// 逻辑
-export default {
-  name: 'Footer',
-  props:['title'],
-  data(){
-    return{
-     
-    }
-  }
-}
+    export default {
+        name:'Footer',
+        data(){
+            return{
+                copyright:'Copyright 2020 Vue '
+            }
+        }
+    };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .footer{
-    background: #888;
+    background: #222;
+    padding:6px;
+}
+p{
+    color:lightgreen;
+    text-align: center;
 }
 </style>

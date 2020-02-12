@@ -1,46 +1,31 @@
 <template>
   <div id="app">
-    <Header :headtit='title' @CheangeHeader='Fn1'/>
-    <Users :content='people' />
-    <Footer :title='title'/>
+    <!-- <h1>app.vue</h1> -->
+    <!-- 调用组件 -->
+    <!-- <Header></Header> -->
+    <Header />
+    <Users />
+    <Footer />
   </div>
 </template>
 <script>
-// 1:传值  2：传引用
 // 1.引入局部组件
   import Users from "./components/Users";
   import Header from "./components/Header";
   import Footer from "./components/Footer";
-  // import HelloWorld from "./components/HelloWorld";
   export default {
     name:"app",
     // 注册组件
     components:{
-      // HelloWorld,
+      // users:Users
       Users,
       Header,
       Footer
-      // "users-ee":Users,
-      // Users
-    },
-    data(){
-      return{
-        title:'父组件传给子组件',
-        people:[
-                    'xinghui','lilei'
-                ]
-      }
-    },
-    methods:{
-      Fn1(item){
-        // console.log(item);
-        this.title=item;
-      }
     }
   }
 </script>
-<style>
- h1{
-   color:green;
- }
+<style scoped>
+h1{
+  color:green;
+}
 </style>

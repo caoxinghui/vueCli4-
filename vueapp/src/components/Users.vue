@@ -1,32 +1,26 @@
 <template>
     <div class='users'>
-        <h1 >User</h1>
-        <ul @click='changeArray'>
-            <li v-for="(user,index) in content" :key='index'>{{user}}</li>
+        <ul>
+            <li @click='user.show = !user.show' v-for="(user,index) in people" :key='index'>
+                <h2>{{user.name}}</h2>
+                <h3 v-show='user.show'>{{user.weChat}}</h3>
+            </li>
         </ul> 
     </div>
 </template>
 <script>
     export default {
         name:'Users',
-        // props:['content'],
-        props:{
-            content:{
-                type:Array,
-                required:false,
-                default:['2','3']
-            }
-        },
         data(){
             return{
-                // content:[]
+                people:[
+                    {name:'xinghui1',weChat:'18822514340',show:false},
+                    {name:'xinghui2',weChat:'18822514340',show:false},
+                    {name:'xinghui3',weChat:'18822514340',show:false},
+                    {name:'xinghui4',weChat:'18822514340',show:false},
+                    {name:'xinghui5',weChat:'18822514340',show:false}
+                ]
             }
-        },
-        methods:{
-            changeArray(){
-                this.content.push('2222');
-            }
-            
         }
     };
 </script>
