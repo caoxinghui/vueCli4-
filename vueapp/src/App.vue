@@ -1,38 +1,32 @@
 <template>
-  <div>
-    <div class='container'>
-      <Header />
-    </div>
-    <div class='container'>
-      <router-view></router-view>
-    </div>
-    <br>
-    <div class='container'>
-      <div ></div>
-    </div>
+  <div id="app">
+    <!-- <h1>app</h1> -->
+    <One/>
+    <Two/>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
+import One from './components/One.vue'
+import Two from './components/Two.vue'
+
 export default {
-  name:'app',
-  components:{
-    Header,
+  name: 'App',
+  components: {
+    One,
+    Two
   },
-  data() {
-    return {
-
+  data(){
+    return{
+      
     }
-  },
-  created() {
-
-  },
-  mounted() {
-
   }
 }
 </script>
-<style scoped>
 
+<style>
+body{
+    font-family: Ubuntu;
+    color: #555;
+}
 </style>
