@@ -3,9 +3,9 @@
     <!-- <h1>app.vue</h1> -->
     <!-- 调用组件 -->
     <!-- <Header></Header> -->
-    <Header />
+    <Header :headerTitle='title'/>
     <Users />
-    <Footer />
+    <Footer :footerTitle='title'/>
   </div>
 </template>
 <script>
@@ -21,6 +21,11 @@
       Users,
       Header,
       Footer
+    },
+    data(){
+      return{
+        title:'父组件给子组件 传值'
+      }
     }
   }
 </script>
