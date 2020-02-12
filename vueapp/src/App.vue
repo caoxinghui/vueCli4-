@@ -1,50 +1,47 @@
 <template>
   <div id="app">
-    <!-- <h1>app.vue</h1> -->
-    <!-- 调用组件 -->
-    <!-- <Header></Header> -->
-    <Header :headerTitle='title' @titleChange='updataTitle'/>
-    <!-- <Users :sbquser='people'/>
-    <hr>
-    <Users :sbquser='people' />
-    <Footer :footerTitle='title'/> -->
+    <SoltDemo>
+      <!-- <div slot='title'>
+        
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident ipsum repudiandae quasi repellat, minima reiciendis quod id laboriosam atque repellendus officiis, ducimus, distinctio quibusdam omnis ipsam quo voluptate debitis aut.</p>
+      </div>
+      <div slot='text'>
+        <p>content</p>
+        <h4>Lorem ipsum dolor sit amet.</h4>
+      </div> -->
+      <div slot='header'>
+        <p>Header</p>
+        <!-- <p>Header</p> -->
+        <h2>{{title}}</h2>
+      </div>
+       
+       <div slot='footer'>Footer</div>
+    </SoltDemo>
   </div>
 </template>
 <script>
 // 1.引入局部组件
-  import Users from "./components/Users";
-  import Header from "./components/Header";
-  import Footer from "./components/Footer";
+  import SoltDemo from "./components/SoltDemo";
   export default {
     name:"app",
     // 注册组件
-    components:{
-      // users:Users
-      Users,
-      Header,
-      Footer
-    },
+    components:{SoltDemo},
     data(){
       return{
-        title:'父组件给子组件 传值27',
-         people:[
-                    {name:'xinghui1',weChat:'18822514340',show:false},
-                    {name:'xinghui2',weChat:'18822514340',show:false},
-                    {name:'xinghui3',weChat:'18822514340',show:false},
-                    {name:'xinghui4',weChat:'18822514340',show:false},
-                    {name:'xinghui5',weChat:'18822514340',show:false}
-                ]
+        title:'Title',
       }
     },
-    methods:{
-      updataTitle(data){
-        this.title = data;
-      }
-    }
+    methods:{}
   }
 </script>
 <style scoped>
 h1{
   color:green;
 }
+h2{
+        color:red;
+    }
+    p{
+      color:red;
+    }
 </style>
