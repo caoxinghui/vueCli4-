@@ -1,34 +1,39 @@
 <template>
   <div id="app">
-    <SoltDemo>
-      <!-- <div slot='title'>
-        
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident ipsum repudiandae quasi repellat, minima reiciendis quod id laboriosam atque repellendus officiis, ducimus, distinctio quibusdam omnis ipsam quo voluptate debitis aut.</p>
-      </div>
-      <div slot='text'>
-        <p>content</p>
-        <h4>Lorem ipsum dolor sit amet.</h4>
-      </div> -->
-      <div slot='header'>
-        <p>Header</p>
-        <!-- <p>Header</p> -->
-        <h2>{{title}}</h2>
-      </div>
-       
-       <div slot='footer'>Footer</div>
-    </SoltDemo>
+     <!-- <One />
+     <Two /> -->
+
+    <!-- <components :is='component'>
+    </components> -->
+
+    <!-- <keep-alive>
+      <components :is='component'>
+      </components>
+    </keep-alive> -->
+
+    <keep-alive :include="['one1','two2']" :exclude="['two2']">
+      <components :is='component'>
+      </components>
+    </keep-alive>
+
+    <button @click='component = "One"'>One</button>
+    <button @click='component = "Two"'>Two</button> 
   </div>
 </template>
 <script>
 // 1.引入局部组件
-  import SoltDemo from "./components/SoltDemo";
+  import One from "./components/One";
+  import Two from "./components/Two";
   export default {
     name:"app",
     // 注册组件
-    components:{SoltDemo},
+    components:{
+      One,
+      Two
+    },
     data(){
       return{
-        title:'Title',
+        component:'One'
       }
     },
     methods:{}
@@ -40,8 +45,5 @@ h1{
 }
 h2{
         color:red;
-    }
-    p{
-      color:red;
     }
 </style>

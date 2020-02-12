@@ -1,10 +1,8 @@
 <template>
     <div>
-        <slot name='header'></slot>
-       <!-- <slot name='title'></slot> -->
+       <slot name='title'></slot>
        <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, rem!</h1>
-       <!-- <slot name='text'></slot> -->
-       <slot name='footer'></slot>
+       <slot name='text'></slot>
     </div>
 </template>
 <script>
