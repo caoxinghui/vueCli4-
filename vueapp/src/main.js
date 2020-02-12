@@ -10,6 +10,7 @@ Vue.config.productionTip = false;
 // 2.注册全局组件
 // Vue.component("users",Users);
 new Vue({
+  // el:'#app',
   router,
   render: h => h(App)
 }).$mount('#app')

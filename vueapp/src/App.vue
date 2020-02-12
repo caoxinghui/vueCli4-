@@ -4,10 +4,10 @@
     <!-- 调用组件 -->
     <!-- <Header></Header> -->
     <Header :headerTitle='title' @titleChange='updataTitle'/>
-    <Users :sbquser='people'/>
+    <!-- <Users :sbquser='people'/>
     <hr>
     <Users :sbquser='people' />
-    <Footer :footerTitle='title'/>
+    <Footer :footerTitle='title'/> -->
   </div>
 </template>
 <script>
@@ -26,7 +26,7 @@
     },
     data(){
       return{
-        title:'父组件给子组件 传值',
+        title:'父组件给子组件 传值27',
          people:[
                     {name:'xinghui1',weChat:'18822514340',show:false},
                     {name:'xinghui2',weChat:'18822514340',show:false},
