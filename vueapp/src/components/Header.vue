@@ -1,63 +1,48 @@
 <template>
-    <div class='header' @click='changeTitle'>
-        <h1>{{title}} {{headerTitle}}</h1>
-    </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="py-2" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="d-block mx-auto"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+          <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+          <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+          <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+          <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+          <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+        </svg>
+      </a>
+      <a href="/" class="navbar-brand">Demo系统</a>
+      <ul class="navbar-nav">
+        <li><router-link :to="{name:'Home'}" tag='div' class="nav-link">主页</router-link></li>
+        <li><router-link :to="{name:'Menu'}" class="nav-link">菜单</router-link></li>
+        <li><router-link to="/admin" class="nav-link">管理</router-link></li>
+        <li><router-link to="/about" class="nav-link">关于我们</router-link></li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li><router-link to="/login" class="nav-link">登录</router-link></li>
+        <li><router-link to="/register" class="nav-link">注册</router-link></li>
+      </ul>
+    </nav>
+  </header>
 </template>
 <script>
-    export default {
-        name:'Header',
-        props:{
-            headerTitle:{
-                type:String,
-            }
-        },
-        data(){
-            return{
-                title:'Vue1 多组件'
-            }
-        },
-        methods:{
-            changeTitle(){
-                // this.headerTitle = '子组件改变父组件的值2222',
-                // 注册事件 参数1：事件名称 参数2：传的值
-                this.$emit('titleChange','xinghui子组件改变父组件的值');
-            }
-        },
-        //生命周期函数
-        
-        // beforeCreate(){
-        //     alert('这时Vue实例还没创建 所有的data还没有 不可以用watch监听')
-        // },
-        // created(){
-        //     alert('这时实例已经创建 可以得到data, 调用watch,但是页面还是空白')
-        // },
-        // beforeMount(){
-        //     alert('页面还是空白，这时render函数被调用')
-        // },
-        // mounted(){
-        //     alert('页面挂载了，可以看到页面的内容，也可以访问DOM');
-        // },
-        // beforeUpdate(){
-        //     alert('数据更新之前，就是虚拟DOM打补丁之前。')
-        // },
-        // updated(){
-        //     alert('数据已经更新完毕！')
-        // },
-        // beforeDestroy(){
-        //     alert('离开页面之前，清楚定时器！')
-        // },
-        // destroyed(){
-        //     alert('实例已经完全被销毁！')
-        // }
-    };
+export default {
+  computed: {
+  },
+  methods: {
+  }
+};
 </script>
-<style scoped>
-    .header{
-        background:green;
-        padding:10px;
-    }
-    h1{
-        color:#222;
-        text-align:center;
-    }
-</style>
